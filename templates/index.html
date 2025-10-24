@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Collection System</title>
+    <style>
+        body { font-family: Arial; margin: 50px; background-color: #f9f9f9; }
+        h1 { color: #333; }
+        form { background: white; padding: 20px; border-radius: 10px; width: 300px; }
+        input, textarea { width: 100%; padding: 8px; margin: 8px 0; }
+        button { background-color: #4CAF50; color: white; padding: 8px 12px; border: none; border-radius: 5px; }
+        .feedback-box { margin-top: 20px; background: white; padding: 15px; border-radius: 10px; }
+        .msg { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Feedback Collection System</h1>
+
+    {% if message %}
+    <p class="msg">{{ message }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <label>Your Feedback:</label>
+        <textarea name="feedback" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if feedbacks %}
+    <div class="feedback-box">
+        <h3>All Feedbacks:</h3>
+        <ul>
+            {% for f in feedbacks %}
+            <li><strong>{{ f.name }}:</strong> {{ f.feedback }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
