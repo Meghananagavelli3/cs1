@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: harmain1251/daily-quotes:latest
+        image: nagavellimeghana03/daily-quotes:latest
         ports:
         - containerPort: 5000
