@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "app"
         IMAGE_TAG = "v2"
-        DOCKER_REPO = "harmain1251/daily-quotes"
+        DOCKER_REPO = "nagavellimeghana03/daily-quotes"
     }
 
     stages {
